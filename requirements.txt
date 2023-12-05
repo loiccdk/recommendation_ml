@@ -1,3 +1,4 @@
 pandas
 flask
+numpu
 scikit-surprise
