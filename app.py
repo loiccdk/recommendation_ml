@@ -11,6 +11,9 @@ df = pd.read_csv('song_dataset.csv').sample(frac=0.025)
 # Dataframe that will be used for the recommendations
 new_df = df
 
+# List of songs id, title and artist, without duplicate, in alphabetical order (will be used for display)
+songs = df[['song', 'title', 'artist_name']].drop_duplicates().sort_values(by=['title']).set_index('song').T.to_dict()
+
 # Load the dataset for the surprise library
 reader = Reader(rating_scale=(1, 100))
 data = Dataset.load_from_df(df[['user', 'song', 'play_count']], reader)
