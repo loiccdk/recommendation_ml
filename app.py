@@ -6,7 +6,7 @@ from surprise.model_selection import train_test_split
 import pandas as pd
 
 # Load the dataset
-df = pd.read_csv('song_dataset.csv').sample(frac=0.1)
+df = pd.read_csv('song_dataset.csv').sample(frac=0.025)
 new_df = df
 # Load the dataset for the surprise library
 reader = Reader(rating_scale=(1, 100))
