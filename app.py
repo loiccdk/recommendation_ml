@@ -44,7 +44,7 @@ app.debug = True
 def dropdown():
     return render_template('select.html', songs=songs)
 
-@app.route('/submit-form', methods = ['GET', 'POST'])
+@app.route('/recommendation', methods = ['GET', 'POST'])
 def submitForm():
     selectValue = request.form.getlist('songs')
     recommendations = get_recommendations(selectValue, 20)
