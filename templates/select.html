@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dropdown</title>
+</head>
+<body>
+<form class = "ey" method="POST" action="{{ url_for('submitForm') }}"> <!-- note action -->
+    <select multiple name= songs method="GET" action="/">
+        {% for song in songs %}
+        <option value= "{{song}}" >{{songs[song]['title']}} -- {{songs[song]['artist_name']}}</option>"
+        {% endfor %}
+    </select>
+    <button type="submit">GO</button>
+</form>
+
+</body>
+</html>
